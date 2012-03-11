@@ -15,14 +15,12 @@ To create a sqlite database, you can use the [sqlite manager firefox addon](http
 
 Edit ***SQLiteManager.h*** and enter the name of your database to the constant ***databaseName*** with its extension.
 
-When you want to use SQLiteManager, import SQLiteManager.h dévut in your code file:
+When you want to use SQLiteManager, `#import "SQLiteManager.h"` in your code file:
 
-	#import "SQLiteManager.h"
-
-You can now access method SQLiteManager this way:
 	
-	[SQLiteManager singleton];
 
+You can now access method SQLiteManager this way `[SQLiteManager singleton]`:
+	
 # How to use #
 
 ***Note :*** All optional parameters must be set to ***nil*** if they are not used.
@@ -35,7 +33,7 @@ Insert a new row in a table.
 
  * @ param1: the fields and data to be saved
  * @ param2: name of the table
- * @ return: YES if successful, otherwise NO
+ * @ return: `YES` if successful, otherwise `NO`
 
 Example
 
@@ -79,4 +77,13 @@ Deletes a row from a table.
 
  * @ param1: id of row
  * @ param2: name of the table
- * @ return: YES if successful, otherwise NO
+ * @ return: `YES` if successful, otherwise `NO`
+
+ ## Specific SQL query
+
+ 	-(id)executeSql:(NSString *)sql;
+
+Executes a sql query.
+
+ * @ param1: sql query
+ * @ return: `NSArray` if it's an read query, else `YES` if successful, otherwise `NO`.
