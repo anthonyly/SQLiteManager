@@ -1,7 +1,7 @@
 # SQLiteManager
 
-SQLiteManager is a manager of SQL statements for iOS projects in objective-c.
-SQLiteManager follows the  ***Singleton ****** design pattern to simplify its use throughout the project.
+SQLiteManager is a manager of SQL statements for iOS projects in ***objective-c***.
+SQLiteManager follows the  ***Singleton*** design pattern to simplify its use throughout the project.
 In an MVC design pattern, SQLiteManager can be regarded as the parent class of the  ***Model*** layer.
 
 # Install #
@@ -141,6 +141,11 @@ Executes a sql query.
 
 # Credits #
 
+### Inspirations
+
+ * [http://www.geckogeek.fr](http://www.geckogeek.fr)
+ * [http://badmonkey.qcct.net](http://badmonkey.qcct.net)
+
 ### Author
 
-[Anthony Ly](mailto:anthonyly.com@gmail.com)
+[Anthony Ly](mailto:anthonyly.com@gmail.com) [@pik_at](https://twitter.com/#!/pik_at)
