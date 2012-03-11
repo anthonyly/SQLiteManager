@@ -33,11 +33,9 @@ You can now access method SQLiteManager this way:
 
 Insert a new row in a table.
 
-@ param1: the fields and data to be saved
-
-@ param2: name of the table
-
-@ return: YES if successful, otherwise NO
+ * @ param1: the fields and data to be saved
+ * @ param2: name of the table
+ * @ return: YES if successful, otherwise NO
 
 Example
 
@@ -53,9 +51,8 @@ Example
 
 Reads all rows from a table.
 
-@ param1: table name
-
-@ return: rows of table
+ * @ param1: table name
+ * @ return: rows of table
 
 Example
 
@@ -80,8 +77,6 @@ Example
 
 Deletes a row from a table.
 
-@ param1: id of row
-
-@ param2: name of the table
-
-@ return: YES if successful, otherwise NO
+ * @ param1: id of row
+ * @ param2: name of the table
+ * @ return: YES if successful, otherwise NO
