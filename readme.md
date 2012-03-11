@@ -36,7 +36,7 @@ Insert a new row in a table.
  * @ return: `YES` if successful, otherwise `NO`
 
 
-Example
+#### Example
 
 	NSMutableDictionary *dataSave = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                               @"value1",@"field1",
@@ -56,7 +56,7 @@ Reads all rows from a table.
  * @ return: rows of table
 
 
-Example
+#### Example
 
 	NSArray *result = [[SQLiteManager singleton] findAllFrom:@"TableName"];
 
@@ -72,7 +72,7 @@ Read some field of a table with condition.
  * @ return: rows of table
 
 
-Example
+#### Example
 
 	NSArray *result = [[SQLiteManager singleton] find:@"field1,field2" from:@"tableName" where:@"field2=value"];
 
@@ -91,7 +91,7 @@ Read some field of a table with criteria, sorting and limit.
  * @ return: rows of table
 
 
-Example
+#### Example
 
 	NSArray *result = [[SQLiteManager singleton] find:@"field1,field2" from:@"tableName" where:@"field2=value" order:@"field3 ASC" limit:@"5"];
 
@@ -101,7 +101,7 @@ Update is used the same method of Create.
 Except that in the data table must be specified Backup Id.
 
 
-Example
+#### Example
 
 	NSMutableDictionary *dataSave = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                               @"4",@"id",						
@@ -129,7 +129,7 @@ Executes a sql query.
  * @ return: `NSArray` if it's an read query, else `YES` if successful, otherwise `NO`.
 
 
-Example 1
+#### Example 1
 
 	NSString *sql = @"SELECT * FROM tableName WHERE id=3 OR id=7";
     NSArray *result =[[SQLiteManager singleton] executeSql:sql];
@@ -139,6 +139,8 @@ Example 1
 	NSString *sql = @"UPDATE tableName SET field1 = 'value1' WHERE field2 != 'value2' OR field3 = 'value3'";
     [[SQLiteManager singleton] executeSql:sql];
 
-# AUTHOR #
- 
+# Credits #
+
+### Author
+
 [Anthony Ly](mailto:anthonyly.com@gmail.com)
