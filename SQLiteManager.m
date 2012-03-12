@@ -12,23 +12,31 @@
 #pragma Singleton
 static SQLiteManager * sharedSQLiteManager = nil;
 +(SQLiteManager *)singleton{
-    if (sharedSQLiteManager == nil) {
-        sharedSQLiteManager = [[super allocWithZone:NULL] init];
-    }
-    return sharedSQLiteManager;
+    @synchronized([SQLiteManager class])
+	{
+		if (!sharedSQLiteManager){
+            [[self alloc] init];
+        }
+		return sharedSQLiteManager;
+	}
+	return nil;
 }
-+ (id)allocWithZone:(NSZone *)zone {
-    return [[self singleton] retain];
-}
-- (id)retain {
-    return self;
++(id)alloc{
+	@synchronized([SQLiteManager class])
+	{
+		NSAssert(sharedSQLiteManager == nil, @"Attempted to allocate a second instance of a singleton.");
+		sharedSQLiteManager = [super alloc];
+		return sharedSQLiteManager;
+	}
+	return nil;
 }
 - (id)autorelease {
     return self;
 }
 #pragma SQL : init
 -(id)init {
-	if (self = [super init]) {
+	self = [super init];
+	if (self != nil) {
         NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDir = [documentPaths objectAtIndex:0];
         self.databasePath = [documentsDir stringByAppendingPathComponent:databaseName];
